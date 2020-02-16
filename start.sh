@@ -1,0 +1,1 @@
+/Users/liuqt/.local/share/virtualenvs/live-H1gnEZ7K/bin/python manage.py runserver

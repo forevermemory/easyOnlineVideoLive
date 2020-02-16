@@ -1,0 +1,24 @@
+{% block breadcrumb %}
+    <li class="breadcrumb-item"><a href="{% url 'index:main' %}">返回</a></li>
+    <li class="breadcrumb-item active">{{ anchor_name }} -- {{ room_title }}</li>
+
+{% endblock %}
+{% block content %}
+<div align="center">
+    <link rel="stylesheet"  />
+    <script charset="utf-8" type="text/javascript" src="https://g.alicdn.com/de/prismplayer/2.8.0/aliplayer-flash-min.js"></script>
+    <div  class="prism-player" id="J_prismPlayer"></div>
+    <script>
+            var player = new Aliplayer({
+            id: 'J_prismPlayer',
+            width: '400px',
+            height:'600px',
+            autoplay: true,
+            isLive:true,
+            snapshot:true,
+            //支持播放地址播放,此播放优先级最高
+            source : '{{ anchor_address }}'
+                });
+        </script>
+</div>
+{% endblock %}

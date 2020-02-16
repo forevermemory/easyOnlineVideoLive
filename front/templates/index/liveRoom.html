@@ -1,0 +1,36 @@
+
+
+{% extends 'base.html' %}
+   
+{% block breadcrumb%}
+<li class="breadcrumb-item"><a href="{% url 'index:main' %}">返回</a></li>
+<li class="breadcrumb-item active">{{ room_title }}</li>
+
+{% endblock %}
+
+
+{% block content%}
+
+<div class="row">
+    {% for anchor in anchors  %}
+
+    <div class="col-lg-2 col-md-2">
+        <div class="media">
+            <div class="media-left">
+            <a href="{% url 'index:zhubo'%}?title1={{ room_title }}&title2={{ anchor.title  }}&address={{ anchor.address  }}">
+                <img class="media-object" src="{{ anchor.img }}" alt="..." width="100" height="100">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">{{ anchor.title }}</h4>
+              <!-- {{ anchor.address }} -->
+            </div>
+          </div>
+    </div>
+    
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+
